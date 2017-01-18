@@ -18,7 +18,7 @@ class StripePluginGrailsPlugin extends Plugin {
             [ name: "Nicholas Vaidyanathan", email: "visionary.software.solutions@gmail.com" ]
     ]
 
-    def doWithApplicationContext = {
+    void doWithApplicationContext() {
         Stripe.apiKey = grailsApplication.config.grails.plugins.stripe.secretKey
 
         if (grailsApplication.config.grails.plugins.stripe.containsKey('api')) {
